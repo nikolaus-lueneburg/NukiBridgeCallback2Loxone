@@ -1,25 +1,25 @@
 {
-	"Logging" : {
-		"Enabled" : true,
-		"Filename" : "log.txt"
-	},
+     "Logging" : {
+        "Enabled" : true,
+        "Filename" : "log.txt"
+    },
     "Loxone" : {
         "IP" : "192.168.1.123",
         "User" : "loxUser",
         "Password": "loxPassword"
     },
     "Nuki":[
-		{
-			"ID" : "374773519",
-			"Name" : "Nuki API Test 1",
-			"VIState" : "VI132",
-			"VIBattery" : "VI133"
-		},
-		{
-			"ID" : "374773520",
-			"Name" : "Nuki API Test 2",
-			"VIState" : "VI132",
-			"VIBattery" : "VI133"
-		}
+        {
+            "ID" : "374773519",
+            "Name" : "Nuki API Test 1",
+            "VIState" : "VI132",
+            "VIBattery" : "VI133"
+        },
+        {
+            "ID" : "374773520",
+            "Name" : "Nuki API Test 2",
+            "VIState" : "VI132",
+            "VIBattery" : "VI133"
+        }
     ]
 }
