@@ -3,13 +3,13 @@
 $configFile = file_get_contents("config.json");
 
 # Converting JSON to associative arrays
-$config = json_decode($configFile, true); // if you put json_decode($jsonStr, true), it will convert the json string to associative array
+$config = json_decode($configFile, true);
 
 # Takes raw data from the request
 $json = file_get_contents('php://input');
 
 # Uncomment and customize for testing
-$json = '{"deviceType": 0, "nukiId": 374773519, "mode": 2, "state": 1, "stateName": "locked", "batteryCritical": true}';
+# $json = '{"deviceType": 0, "nukiId": 374773519, "mode": 2, "state": 1, "stateName": "locked", "batteryCritical": true}';
 
 # Converting JSON to associative arrays
 $data = json_decode($json, true);
@@ -17,7 +17,6 @@ $data = json_decode($json, true);
 # Uncomment to check json file structure
 # echo json_last_error();
 # echo json_last_error_msg();
-
 
 # Variables - General
 $DateTime = date("Y-m-d_His");
@@ -45,12 +44,12 @@ $writeLog = function($Text) use ($LoggingEnabled,$LoggingFilename) {
 
 foreach ($config['Nuki'] as $Lock) {
 	if ($Lock['ID'] == $NukiID) {
-		$LockName = $Lock['Name'];
+    		$LockName = $Lock['Name'];
 		$VIState = $Lock['VIState'];
 		$VIBattery = $Lock['VIBattery'];
 		
 		# Log lock state
-        $writeLog("$DateTime - $LockName - $NukiID - $NukiStateName");
+        	$writeLog("$DateTime - $LockName - $NukiID - $NukiStateName");
 		
 		# Send lock state to defined virutal input 
 		fopen("http://$LoxUser:$LoxPassword@$LoxIP/dev/sps/io/$VIState/$NukiState", "r");
